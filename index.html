@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Figurinhas Agência Piati</title>
   <style>
     body {
@@ -18,7 +17,7 @@
       padding: 20px;
     }
     header img {
-      width: 120px;
+      width: 120px; /* logotipo */
     }
     h1 {
       font-size: 2em;
@@ -37,7 +36,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
     .figurinha img {
-      width: 200px;
+      width: 200px; /* figurinha */
     }
     button {
       margin-top: 10px;
@@ -68,15 +67,17 @@
 <body>
 
   <header>
-    <img src="PIATI_LOGO.png" alt="Logo Agência Piati" />
+    <!-- 🔄 Aqui vai o link da SUA LOGO -->
+    <img src="LINK_DA_SUA_LOGO.png" alt="Logo Agência Piati">
     <h1>✨ Figurinhas da Agência Piati ✨</h1>
     <p>🚀 Crie Stories mais criativos, divertidos e profissionais!<br> 
     👉 Toque no botão para copiar e usar no seu Instagram.</p>
   </header>
 
   <div class="figurinha">
-    <img id="fig1" src="SONHO_FIGURINHA.png" alt="Figurinha +1 Sonho Realizado" />
-    <br />
+    <!-- 🔄 Aqui vai o link da SUA FIGURINHA -->
+    <img id="fig1" src="LINK_DA_SUA_FIGURINHA.png" alt="Figurinha">
+    <br>
     <button onclick="copiarImagem('fig1')">📋 Copiar Figurinha</button>
   </div>
 
@@ -87,10 +88,6 @@
   <script>
     async function copiarImagem(id) {
       const img = document.getElementById(id);
-      if (!navigator.clipboard || !window.ClipboardItem) {
-        alert('⚠️ Copiar imagem não é suportado neste navegador.');
-        return;
-      }
       const data = await fetch(img.src);
       const blob = await data.blob();
       const item = new ClipboardItem({ [blob.type]: blob });
