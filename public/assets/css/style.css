@@ -1,0 +1,57 @@
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #001EFF, #6D00FF);
+      color: white;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+    }
+    header img {
+      width: 120px; /* logotipo */
+    }
+    h1 {
+      font-size: 2em;
+      margin: 10px 0;
+    }
+    p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+    .figurinha {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      margin: 20px auto;
+      width: fit-content;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .figurinha img {
+      width: 200px; /* figurinha */
+    }
+    button {
+      margin-top: 10px;
+      background: #FFCC00;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ffd633;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 10px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
