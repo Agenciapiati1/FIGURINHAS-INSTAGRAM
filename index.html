@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Figurinhas Agência Piati</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #001EFF, #6D00FF);
+      color: white;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+    }
+    header img {
+      width: 120px;
+    }
+    h1 {
+      font-size: 2em;
+      margin: 10px 0;
+    }
+    p {
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+    .figurinha {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      margin: 20px auto;
+      width: fit-content;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .figurinha img {
+      width: 200px;
+    }
+    button {
+      margin-top: 10px;
+      background: #FFCC00;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ffd633;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 10px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="PIATI_LOGO.png" alt="Logo Agência Piati" />
+    <h1>✨ Figurinhas da Agência Piati ✨</h1>
+    <p>🚀 Crie Stories mais criativos, divertidos e profissionais!<br> 
+    👉 Toque no botão para copiar e usar no seu Instagram.</p>
+  </header>
+
+  <div class="figurinha">
+    <img id="fig1" src="SONHO_FIGURINHA.png" alt="Figurinha +1 Sonho Realizado" />
+    <br />
+    <button onclick="copiarImagem('fig1')">📋 Copiar Figurinha</button>
+  </div>
+
+  <footer>
+    Feito com ❤️ por <a href="https://instagram.com/agenciapiati" target="_blank">@agenciapiati</a>
+  </footer>
+
+  <script>
+    async function copiarImagem(id) {
+      const img = document.getElementById(id);
+      if (!navigator.clipboard || !window.ClipboardItem) {
+        alert('⚠️ Copiar imagem não é suportado neste navegador.');
+        return;
+      }
+      const data = await fetch(img.src);
+      const blob = await data.blob();
+      const item = new ClipboardItem({ [blob.type]: blob });
+      navigator.clipboard.write([item]);
+      alert('🎉 Figurinha copiada! Abra seu Story e cole!');
+    }
+  </script>
+
+</body>
+</html>
